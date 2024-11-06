@@ -30,6 +30,26 @@ orgs.newOrg('eclipse-osgi-technology') {
       actions_can_approve_pull_request_reviews: false,
     },
   },
+  secrets+: [
+    orgs.newOrgSecret('GITLAB_API_TOKEN') {
+      value: "pass:bots/technology.osgi-technology/gitlab.eclipse.org/api-token",
+    },
+    orgs.newOrgSecret('ORG_GPG_KEY_ID') {
+      value: "pass:bots/technology.osgi-technology/gpg/key_id",
+    },
+    orgs.newOrgSecret('ORG_GPG_PASSPHRASE') {
+      value: "pass:bots/technology.osgi-technology/gpg/passphrase",
+    },
+    orgs.newOrgSecret('ORG_GPG_PRIVATE_KEY') {
+      value: "pass:bots/technology.osgi-technology/gpg/secret-subkeys.asc",
+    },
+    orgs.newOrgSecret('ORG_OSSRH_PASSWORD') {
+      value: "pass:bots/technology.osgi-technology/oss.sonatype.org/gh-token-password",
+    },
+    orgs.newOrgSecret('ORG_OSSRH_USERNAME') {
+      value: "pass:bots/technology.osgi-technology/oss.sonatype.org/gh-token-username",
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('jakartarest-osgi') {
       allow_merge_commit: true,
