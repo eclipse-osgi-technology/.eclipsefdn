@@ -2,7 +2,7 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 local branchProtectionRule(branchName) = orgs.newBranchProtectionRule(branchName) {
   required_approving_review_count: 0,
-  requires_linear_history: true,
+  requires_linear_history: false,
   requires_strict_status_checks: true,
 };
 
