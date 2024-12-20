@@ -21,7 +21,7 @@ local newOSGiTechRepo(repoName, default_branch = 'main') = orgs.newRepo(repoName
 };
 
 
-orgs.newOrg('eclipse-osgi-technology') {
+orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
   settings+: {
     description: "",
     name: " OSGi® Technology Project ",
