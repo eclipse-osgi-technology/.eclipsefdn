@@ -77,6 +77,10 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
       description: "Repository for the maven poms",
     },
 
+    newOSGiTechRepo('command') {
+      description: "Repository for the command related bundles",
+    },
+
     newOSGiTechRepo('feature-launcher') {
       description: "Repository for the feature-launcher osgi implementation",
     },
@@ -87,6 +91,10 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
 
     newOSGiTechRepo('jakarta-websockets') {
       description: "Repository for the jakarta-websockets osgi implementation",
+    },
+
+    newOSGiTechRepo('scheduler') {
+      description: "Repository for the scheduler related bundles",
     },
     
     orgs.newRepo('osgi-test') {
@@ -192,6 +200,7 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
         orgs.newEnvironment('github-pages'),
       ],
     },
+    
     orgs.newRepo('slf4j-osgi') {
       allow_merge_commit: true,
       allow_update_branch: false,
