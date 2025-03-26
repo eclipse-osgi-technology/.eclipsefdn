@@ -9,6 +9,7 @@ local branchProtectionRule(branchName) = orgs.newBranchProtectionRule(branchName
 local newOSGiTechRepo(repoName, default_branch = 'main') = orgs.newRepo(repoName) {
   allow_squash_merge: false,
   allow_update_branch: false,
+  code_scanning_default_setup_enabled: true,
   default_branch: default_branch,
   delete_branch_on_merge: false,
   dependabot_security_updates_enabled: true,
@@ -124,6 +125,8 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
         allow_action_patterns+: [
           "gradle/gradle-build-action@*",
           "gradle/wrapper-validation-action@*",
+          "gradle/actions/wrapper-validation@*",
+          "gradle/actions/setup-gradle@*",
           "step-security/harden-runner@*"
         ],
         allow_verified_creator_actions: false,
