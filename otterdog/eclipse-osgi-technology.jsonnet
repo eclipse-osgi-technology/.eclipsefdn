@@ -72,10 +72,16 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
 
     newOSGiTechRepo('.github') {
       description: "github organisation repository, defaults for all other Repositories",
+      code_scanning_default_languages: [
+        "actions",
+      ],
     },
 
     newOSGiTechRepo('maven-pom') {
       description: "Repository for the maven poms",
+      code_scanning_default_languages: [
+        "actions",
+      ],
     },
 
     newOSGiTechRepo('command') {
@@ -84,10 +90,18 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
 
     newOSGiTechRepo('feature-launcher') {
       description: "Repository for the feature-launcher osgi implementation",
+      code_scanning_default_languages: [
+        "actions",
+        "java-kotlin",
+      ],
     },
 
     newOSGiTechRepo('jakarta-webservices') {
       description: "Repository for the jakarta-webservices osgi implementation",
+      code_scanning_default_languages: [
+        "actions",
+        "java-kotlin",
+      ],
     },
 
     newOSGiTechRepo('jakarta-websockets') {
