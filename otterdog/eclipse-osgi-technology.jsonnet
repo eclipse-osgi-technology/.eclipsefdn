@@ -111,6 +111,10 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
     newOSGiTechRepo('scheduler') {
       description: "Repository for the scheduler related bundles",
     },
+
+    newOSGiTechRepo('incubator') {
+      description: "Repository for the incubating/draft bundles",
+    },
     
     orgs.newRepo('osgi-test') {
       allow_merge_commit: true,
