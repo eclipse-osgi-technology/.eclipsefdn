@@ -114,6 +114,9 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
 
     newOSGiTechRepo('incubator') {
       description: "Repository for the incubating/draft bundles",
+      code_scanning_default_languages: [
+        "java-kotlin",
+      ],
     },
     
     orgs.newRepo('osgi-test') {
