@@ -88,6 +88,10 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
       description: "Repository for the command related bundles",
     },
 
+    newOSGiTechRepo('console') {
+      description: "Repository for the console related bundles",
+    },
+
     newOSGiTechRepo('feature-launcher') {
       description: "Repository for the feature-launcher osgi implementation",
       code_scanning_default_languages: [
