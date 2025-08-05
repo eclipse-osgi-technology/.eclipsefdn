@@ -86,10 +86,18 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
 
     newOSGiTechRepo('command') {
       description: "Repository for the command related bundles",
+      code_scanning_default_languages: [
+        "actions",
+        "java-kotlin",
+      ],
     },
 
     newOSGiTechRepo('console') {
       description: "Repository for the console related bundles",
+      code_scanning_default_languages: [
+        "actions",
+        "java-kotlin",
+      ],
     },
 
     newOSGiTechRepo('feature-launcher') {
@@ -114,6 +122,10 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
 
     newOSGiTechRepo('scheduler') {
       description: "Repository for the scheduler related bundles",
+      code_scanning_default_languages: [
+        "actions",
+        "java-kotlin",
+      ],
     },
 
     newOSGiTechRepo('plurl') {
