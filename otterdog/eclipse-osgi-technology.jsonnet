@@ -116,6 +116,10 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
       description: "Repository for the scheduler related bundles",
     },
 
+    newOSGiTechRepo('plurl') {
+      description: "Plurl library for managing multiple URL handler factories ",
+    },
+
     newOSGiTechRepo('incubator') {
       description: "Repository for the incubating/draft bundles",
       code_scanning_default_languages: [
