@@ -50,6 +50,12 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
     orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_USERNAME') {
       value: "pass:bots/technology.osgi-technology/central.sonatype.org/token-username",
     },
+    orgs.newOrgSecret('DOCKER_HUB_USER') {
+      value: "pass:bots/technology.osgi-technology/docker.com/username",
+    },
+    orgs.newOrgSecret('DOCKER_HUB_TOKEN') {
+      value: "pass:bots/technology.osgi-technology/docker.com/api-token",
+    },
   ],
   _repositories+:: [
     orgs.newRepo('jakartarest-osgi') {
