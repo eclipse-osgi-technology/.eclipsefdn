@@ -135,7 +135,11 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
     },
 
     newOSGiTechRepo('plurl') {
-      description: "Plurl library for managing multiple URL handler factories ",
+      description: "Plurl library for managing multiple URL handler factories",
+      code_scanning_default_languages: [
+        "actions",
+        "java-kotlin",
+      ],
     },
 
     newOSGiTechRepo('incubator') {
