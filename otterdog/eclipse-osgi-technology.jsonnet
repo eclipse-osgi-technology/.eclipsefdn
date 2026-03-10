@@ -106,6 +106,21 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
       ],
     },
 
+    newOSGiTechRepo('container.feature-launcher') {
+      description: "Repository for the containers with feature-launcher",
+      code_scanning_default_languages: [
+        "actions",
+      ],
+    },
+
+    newOSGiTechRepo('features') {
+      description: "Repository for osgi-features",
+      code_scanning_default_languages: [
+        "actions",
+        "java-kotlin",
+      ],
+    },
+
     newOSGiTechRepo('feature-launcher') {
       description: "Repository for the feature-launcher osgi implementation",
       code_scanning_default_languages: [
