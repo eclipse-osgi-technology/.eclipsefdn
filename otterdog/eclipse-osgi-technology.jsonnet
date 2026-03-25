@@ -265,7 +265,11 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
         orgs.newEnvironment('github-pages'),
       ],
     },
-    
+
+    newOSGiTechRepo('opentelemetry') {
+      description: "Open Telemetry for OSGi",
+    },
+
     orgs.newRepo('slf4j-osgi') {
       allow_merge_commit: true,
       allow_update_branch: false,
