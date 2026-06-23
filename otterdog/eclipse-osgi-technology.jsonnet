@@ -269,6 +269,9 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
     newOSGiTechRepo('opentelemetry') {
       description: "Open Telemetry for OSGi",
     },
+    newOSGiTechRepo('osgi-build-tools') {
+      description: "OSGi build tools",
+    },
 
     orgs.newRepo('slf4j-osgi') {
       allow_merge_commit: true,
