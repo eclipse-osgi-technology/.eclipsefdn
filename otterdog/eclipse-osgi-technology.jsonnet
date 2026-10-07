@@ -156,6 +156,13 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
         "java-kotlin",
       ],
     },
+    newOSGiTechRepo('janus') {
+      description: "Two-faced Roman god; faces both the OSGi world and the Java SPI world simultaneously.",
+      code_scanning_default_languages: [
+        "actions",
+        "java-kotlin",
+      ],
+    },
 
     newOSGiTechRepo('incubator') {
       description: "Repository for the incubating/draft bundles",
