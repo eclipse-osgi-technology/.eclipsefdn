@@ -198,6 +198,8 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
           "gradle/wrapper-validation-action@*",
           "gradle/actions/wrapper-validation@*",
           "gradle/actions/setup-gradle@*",
+          "mikepenz/action-junit-report@*",
+          "ossf/scorecard-action@*",
           "step-security/harden-runner@*"
         ],
         allow_verified_creator_actions: false,
@@ -279,6 +281,7 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
       description: "Open Telemetry for OSGi",
     },
     newOSGiTechRepo('osgi-build-tools') {
+      code_scanning_default_setup_enabled: false,
       description: "OSGi build tools",
     },
 
