@@ -181,7 +181,6 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "main",
       gh_pages_source_path: "/docs",
-      homepage: "https://osgi.github.io/osgi-test/",
       topics+: [
         "assertj",
         "assertj-support",
