@@ -1,0 +1,46 @@
+id: osgi-tech-codeql
+name: CodeQL analysis
+description: |-
+  Adds .github/workflows/codeql.yml, which calls the reusable CodeQL workflow of
+  eclipse-osgi-technology/.github (Java code and workflows). The listed repos
+  have the CodeQL default setup disabled in eclipse-osgi-technology.jsonnet,
+  GitHub refuses the analysis otherwise.
+type: required_file
+config:
+  repo_selector:
+    name_pattern:
+      - 'command'
+      - 'console'
+      - 'feature-launcher'
+      - 'features'
+      - 'incubator'
+      - 'jakarta-webservices'
+      - 'janus'
+      - 'opentelemetry'
+      - 'osgi-build-tools'
+      - 'osgi-test'
+      - 'plurl'
+      - 'scheduler'
+  files:
+    - path: .github/workflows/codeql.yml
+      content: |
+        # Managed by the otterdog blueprint
+        # {{blueprint_url}}
+        # change it there; the logic lives in eclipse-osgi-technology/.github.
+        name: CodeQL
+        on:
+          push:
+            branches: [ main ]
+          pull_request:
+            branches: [ main ]
+          schedule:
+            - cron: '17 4 * * 3'
+        permissions:
+          contents: read
+        jobs:
+          analyze:
+            permissions:
+              contents: read
+              security-events: write
+            uses: eclipse-osgi-technology/.github/.github/workflows/codeql.yml@main
+      strict: true
