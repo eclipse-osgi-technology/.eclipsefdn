@@ -1,0 +1,46 @@
+id: osgi-tech-stale
+name: Stale issues and pull requests
+description: |-
+  Adds .github/workflows/stale.yml, which calls the reusable stale workflow of
+  eclipse-osgi-technology/.github: an issue or pull request is marked stale after
+  a year without activity and closed three weeks later.
+type: required_file
+config:
+  repo_selector:
+    name_pattern:
+      - '\.github'
+      - 'command'
+      - 'console'
+      - 'container\.feature-launcher'
+      - 'feature-launcher'
+      - 'features'
+      - 'incubator'
+      - 'jakarta-webservices'
+      - 'janus'
+      - 'maven-pom'
+      - 'opentelemetry'
+      - 'osgi-build-tools'
+      - 'osgi-test'
+      - 'plurl'
+      - 'scheduler'
+  files:
+    - path: .github/workflows/stale.yml
+      content: |
+        # Managed by the otterdog blueprint
+        # {{blueprint_url}}
+        # change it there; the logic lives in eclipse-osgi-technology/.github.
+        name: Stale
+        on:
+          schedule:
+            - cron: '30 1 * * *'
+          workflow_dispatch:
+        permissions:
+          contents: read
+        jobs:
+          stale:
+            # a called workflow gets at most what this job grants
+            permissions:
+              issues: write
+              pull-requests: write
+            uses: eclipse-osgi-technology/.github/.github/workflows/stale.yml@main
+      strict: true

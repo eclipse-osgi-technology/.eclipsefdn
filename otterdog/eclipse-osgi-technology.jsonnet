@@ -9,7 +9,9 @@ local branchProtectionRule(branchName) = orgs.newBranchProtectionRule(branchName
 local newOSGiTechRepo(repoName, default_branch = 'main') = orgs.newRepo(repoName) {
   allow_squash_merge: false,
   allow_update_branch: false,
-  code_scanning_default_setup_enabled: true,
+  // CodeQL runs through the codeql.yml blueprint (otterdog/blueprints);
+  // only repos without Java code keep the default setup
+  code_scanning_default_setup_enabled: false,
   default_branch: default_branch,
   delete_branch_on_merge: false,
   dependabot_security_updates_enabled: true,
@@ -78,6 +80,7 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
 
     newOSGiTechRepo('.github') {
       description: "github organisation repository, defaults for all other Repositories",
+      code_scanning_default_setup_enabled: true,
       code_scanning_default_languages: [
         "actions",
       ],
@@ -85,6 +88,7 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
 
     newOSGiTechRepo('maven-pom') {
       description: "Repository for the maven poms",
+      code_scanning_default_setup_enabled: true,
       code_scanning_default_languages: [
         "actions",
       ],
@@ -92,22 +96,15 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
 
     newOSGiTechRepo('command') {
       description: "Repository for the command related bundles",
-      code_scanning_default_languages: [
-        "actions",
-        "java-kotlin",
-      ],
     },
 
     newOSGiTechRepo('console') {
       description: "Repository for the console related bundles",
-      code_scanning_default_languages: [
-        "actions",
-        "java-kotlin",
-      ],
     },
 
     newOSGiTechRepo('container.feature-launcher') {
       description: "Repository for the containers with feature-launcher",
+      code_scanning_default_setup_enabled: true,
       code_scanning_default_languages: [
         "actions",
       ],
@@ -115,26 +112,14 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
 
     newOSGiTechRepo('features') {
       description: "Repository for osgi-features",
-      code_scanning_default_languages: [
-        "actions",
-        "java-kotlin",
-      ],
     },
 
     newOSGiTechRepo('feature-launcher') {
       description: "Repository for the feature-launcher osgi implementation",
-      code_scanning_default_languages: [
-        "actions",
-        "java-kotlin",
-      ],
     },
 
     newOSGiTechRepo('jakarta-webservices') {
       description: "Repository for the jakarta-webservices osgi implementation",
-      code_scanning_default_languages: [
-        "actions",
-        "java-kotlin",
-      ],
     },
 
     newOSGiTechRepo('jakarta-websockets') {
@@ -143,31 +128,17 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
 
     newOSGiTechRepo('scheduler') {
       description: "Repository for the scheduler related bundles",
-      code_scanning_default_languages: [
-        "actions",
-        "java-kotlin",
-      ],
     },
 
     newOSGiTechRepo('plurl') {
       description: "Plurl library for managing multiple URL handler factories",
-      code_scanning_default_languages: [
-        "actions",
-        "java-kotlin",
-      ],
     },
     newOSGiTechRepo('janus') {
       description: "Two-faced Roman god; faces both the OSGi world and the Java SPI world simultaneously.",
-      code_scanning_default_languages: [
-        "java-kotlin",
-      ],
     },
 
     newOSGiTechRepo('incubator') {
       description: "Repository for the incubating/draft bundles",
-      code_scanning_default_languages: [
-        "java-kotlin",
-      ],
     },
     
     orgs.newRepo('osgi-test') {
@@ -281,7 +252,6 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
       description: "Open Telemetry for OSGi",
     },
     newOSGiTechRepo('osgi-build-tools') {
-      code_scanning_default_setup_enabled: false,
       description: "OSGi build tools",
     },
 
