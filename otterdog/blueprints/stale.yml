@@ -16,6 +16,7 @@ config:
       - 'features'
       - 'incubator'
       - 'jakarta-webservices'
+      - 'jakartarest-osgi'
       - 'janus'
       - 'maven-pom'
       - 'opentelemetry'
