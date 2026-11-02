@@ -126,6 +126,10 @@ orgs.newOrg('technology.osgi-technology', 'eclipse-osgi-technology') {
       description: "Repository for the jakarta-websockets osgi implementation",
     },
 
+    newOSGiTechRepo('resolver') {
+      description: "Repository for the resolver related bundles",
+    },
+
     newOSGiTechRepo('scheduler') {
       description: "Repository for the scheduler related bundles",
     },
